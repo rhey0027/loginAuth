@@ -1,3 +1,6 @@
 #dependencies
 node_modules
 .env
+
+
+# async-handler - to eliminate the use of try/catch blocks
