@@ -4,3 +4,6 @@ node_modules
 
 
 # async-handler - to eliminate the use of try/catch blocks
+# mongodb account - user: exprezzcard, password:WA2oB1t2cNUxAT4e
+
+#loginAuthentication - user: loginAuth password: loginAUTH
