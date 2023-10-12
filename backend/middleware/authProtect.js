@@ -9,8 +9,8 @@ const authProtect = asynchHandler(async (req, res, next) => {
     token = req.cookies.jwt;
     if(token) {
         try{
-            const decoded = jwt.verify(token, process.env.JWT_ID);
-            req.user = await User.findById(decoded.userId).select('-password');
+            const checked = jwt.verify(token, process.env.JWT_ID);
+            req.user = await User.findById(checked.userId).select('-password');
             next();
         }
         catch(error){
