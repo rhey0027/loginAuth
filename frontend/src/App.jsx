@@ -1,15 +1,22 @@
 import './App.css';
+import Nav from './components/Nav';
+import { Container } from 'react-bootstrap';
+import { Outlet } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const App = () => {
-  return (
-    <div className="bg-red-700 h-[70px] flex justify-between">
-      <h1 className='text-2xl text-white flex items-center'>Information Management System</h1>
-      <div>
-      <p>Login</p>
-      <p>Signup</p>
-      </div>
-    </div>
+  return ( 
+      <>
+        <Nav />
+        <ToastContainer />
+        <div> 
+        <Container>
+            <Outlet />
+        </Container>
+        </div>
+      </>
   )
 }
- 
 export default App;

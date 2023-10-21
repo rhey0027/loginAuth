@@ -63,13 +63,11 @@ const logoutUser = asyncHandler(async(req, res) => {
 });
 //user profile account
 const getUserProfile = asyncHandler(async(req, res) => {
-    //customized what to display
     const user = {
         _id: req.user._id,
         name: req.user.name,
         email: req.user.email,
     }
-    console.log(user)
     res.status(200).json(user)
     //res.status(200).json({message: 'User Profile'})
 });
@@ -79,13 +77,16 @@ const updateUserProfile = asyncHandler(async(req, res) => {
     if(user) {
         user.name = req.body.name || user.name;
         user.email = req.body.email || user.email;
+        user.password = req.body.password || user.password;
     }
-    const updatedUser = await user.save();
+    const updatedUser = await User.save();
     res.status(200).json({
         _id: updatedUser._id,
         name: updatedUser.name,
-        email: updatedUser.email 
-    });  
+        email: updatedUser.email,
+        password: updatedUser.password,
+    })
+    res.status(200).json(user);
     //res.status(200).json({message: 'User Profile Update'})
 });
 

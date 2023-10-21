@@ -15,3 +15,4 @@ router.post('/logout', logoutUser)
 router.route('/profile').get(authProtect, getUserProfile).put(authProtect, updateUserProfile)
 
 export default router;
+
